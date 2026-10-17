@@ -135,6 +135,29 @@
   .ledger-percent { width: 54px; text-align: right; font: 14px/1.4 var(--mono); color: var(--orange); }
   .register-margin { display: flex; flex-direction: column; gap: 28px; }
   .register-margin > .radial-plate { max-width: 230px; margin-left: auto; margin-right: auto; }
+  .register-plate { margin: 30px 0 42px; border-top: 1px solid var(--light-rule); border-bottom: 1px solid var(--light-rule); padding: 26px 0; }
+  .register-plate .radial-plate { max-width: 720px; margin: 0 auto; }
+  .ledger-hint { margin: 12px 0 4px; font: 13px/1.7 var(--sans); color: var(--muted); }
+  .ledger-toggle { display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; min-height: 46px; padding: 8px 0; border: 0; background: none; color: var(--ink); text-align: left; font: inherit; cursor: pointer; }
+  .ledger-toggle:hover { color: var(--blue); text-decoration: underline; }
+  .ledger-toggle[aria-expanded='true'] { color: var(--blue); }
+  .ledger-caret { flex: none; font-size: 11px; color: var(--orange); }
+  .ledger-open { border-top-color: var(--orange); }
+  .ledger-detail-row > td { padding: 0 0 26px; }
+  .ledger-detail { border-left: 2px solid var(--orange); padding: 2px 0 2px 18px; }
+  .ledger-detail h3 { margin: 0 0 8px; font: 11px/1.6 var(--sans); letter-spacing: .09em; color: var(--muted); }
+  .ledger-detail .ledger-question { margin: 0 0 12px; font-size: 18px; }
+  .ledger-finding-row { margin: 0 0 14px; font: 14px/1.6 var(--sans); }
+  .ledger-finding-row strong { color: var(--orange); }
+  .ledger-evidence-value { color: var(--muted); }
+  .ledger-quote { margin: 0 0 12px; border-top: 1px solid var(--light-rule); padding-top: 12px; }
+  .ledger-quote p { margin: 0; font-size: 17px; }
+  .ledger-quote cite { display: block; margin-top: 7px; font: 11px/1.7 var(--sans); font-style: normal; color: var(--muted); letter-spacing: .04em; }
+  .ledger-quote-empty { margin: 0 0 12px; border-top: 1px solid var(--light-rule); padding-top: 12px; color: var(--muted); font-size: 15px; }
+  .ledger-actions { display: flex; flex-wrap: wrap; gap: 22px; }
+  .wedge-divider { stroke: var(--light-rule); stroke-width: 1px; }
+  .category-track { stroke: var(--light-rule); stroke-width: 1.6px; fill: none; }
+  .category-arc { stroke: var(--orange); stroke-width: 2.2px; fill: none; }
   .marginal-note .section-title { font-size: 18px; }
   .evidence-caption { margin-top: 10px; color: var(--orange); font: 12px/1.5 var(--mono); }
   .enquiry-question { margin-top: 20px; font: italic 19px/1.7 var(--body-serif); }

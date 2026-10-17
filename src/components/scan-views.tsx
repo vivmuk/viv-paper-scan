@@ -11,9 +11,16 @@ export function RegisterView() {
   return <><ScanStatus />{scan && <div className="spread register-spread">
     <section>
       <header className="summation-band"><h1>THE SUMMATION RULE</h1><div><strong>{scan.index ?? '—'}</strong><span>COMPLETENESS INDEX</span></div></header>
-      <Counters /><DomainRegister /><CheckLedger />
+      <Counters />
+      {/* The plate belongs above the ledger at full size: the point of it is comparing how far each
+          category has come, which a 230px thumbnail in the margin cannot show. */}
+      <figure className="engraved-figure register-plate">
+        <RadialPlate />
+        <figcaption className="plate-caption">THE ENGRAVED PLATE - SPOKE LENGTH IS THE EVIDENCE THAT IT IS REPORTED. AN ARC ACROSS EACH DOMAIN'S WEDGE IS THAT DOMAIN'S SCORE.</figcaption>
+      </figure>
+      <DomainRegister /><CheckLedger />
     </section>
-    <aside className="margin-column register-margin"><RadialPlate compact /><MarginalNote /></aside>
+    <aside className="margin-column register-margin"><MarginalNote /></aside>
   </div>}</>;
 }
 export function PlateView() {
