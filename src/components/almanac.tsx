@@ -5,7 +5,7 @@ import { DISCLOSURE, CELL_NOTE_QUESTION } from '@/lib/fixtures';
 import type { EnquiryResult } from '@/lib/scan-client';
 import { useScan } from './scan-provider';
 import { percent } from '@/lib/format';
-import { folioLabel, hasFolioAnchor } from '@/lib/folio';
+import { folioLabel } from '@/lib/folio';
 
 export function Masthead({ children, large = false }: { children: React.ReactNode; large?: boolean }) {
   return <h1 className={`masthead${large ? ' masthead-large' : ''}`}>{children}</h1>;

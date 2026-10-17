@@ -1,7 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useScan } from './scan-provider';
-import type { EnquiryResult } from '@/lib/scan-client';
+import { DOMAIN_LABELS, type EnquiryResult } from '@/lib/scan-client';
 import type { Domain } from '@/lib/catalogue.ts';
 import { percent } from '@/lib/format';
 
@@ -38,13 +38,18 @@ function sectors(checks: EnquiryResult[]) {
 }
 
 export function RadialPlate({ compact = false, checks: provided }: { compact?: boolean; checks?: EnquiryResult[] }) {
-  const { scan } = useScan();
+  const { session, scan } = useScan();
   const router = useRouter();
   const checks = provided ?? scan?.checks;
   if (!checks || checks.length === 0) return null;
   const runs = sectors(checks);
   const half = Math.PI / checks.length;
   const scores = new Map((scan?.domains ?? []).map((domain) => [domain.id, domain.score]));
+  // The wedge whose pass is running now: the plate is being cut while the reader watches. A domain
+  // counts as read only when its own pass has landed, so this is the next one still awaited.
+  const received = new Set(session?.domains ?? []);
+  const reading = session?.status === 'scanning'
+    ? DOMAIN_LABELS.find((domain) => !received.has(domain.id))?.id : undefined;
 
   return <svg className={`radial-plate${compact ? ' radial-plate-compact' : ''}`} viewBox="0 0 800 800" role="img"
               aria-label={`The engraved plate: ${checks.length} spokes, one for every enquiry. Spoke length is proportional to evidence. An arc across each domain's wedge shows that domain's score.`}>
@@ -67,6 +72,8 @@ export function RadialPlate({ compact = false, checks: provided }: { compact?: b
                 <path className="category-track" d={arc(from, to, HUB + REACH)} />
                 <path className="category-arc" d={arc(from, to, HUB + Math.max(2, REACH * (score / 100)))} />
               </>
+            : run.id === reading
+              ? <path className="wedge-reading" d={arc(from, to, HUB + REACH)} />
             : null}
         </g>;
       })}

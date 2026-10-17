@@ -14,6 +14,10 @@ export interface ScanSession {
   notes: string[];
   status: 'scanning' | 'complete' | 'error' | 'cancelled';
   error?: string;
+  /** Wall-clock marks kept for the reading display only: they never affect a finding. */
+  startedAt?: number;
+  arrivals?: number[];
+  lastEventAt?: number;
 }
 export interface EnquiryResult extends CheckResult {
   check: CatalogueCheck;

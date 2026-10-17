@@ -420,3 +420,39 @@
     .demo-notice { margin-top: 0; }
   }
 }
+
+/* ---- The Reading: what is happening while the paper is being read ----
+   Seven passes are counted, never guessed: a step is called read only when its own pass has landed.
+   The clock is time actually spent and the estimate is measured from the passes already finished. */
+.reading { margin-bottom: 26px; font: 13px/1.6 var(--sans); overflow-wrap: anywhere; }
+.reading-title { margin: 0 0 8px; font: 600 11px/1.6 var(--sans); letter-spacing: .14em; color: var(--orange); }
+.reading-paper { margin: 0 0 12px; font: 19px/1.5 var(--body-serif); max-width: 60ch; }
+.reading-clock { margin: 0 0 4px; }
+.reading-clock strong { font-family: var(--mono); color: var(--orange); }
+.reading-basis { color: var(--muted); }
+.reading-line { margin: 0; }
+.reading-line strong { font-family: var(--mono); color: var(--orange); }
+.reading-silence { margin: 10px 0 0; color: var(--muted); font-size: 12px; }
+.reading-steps { margin-top: 14px; }
+.reading-steps th, .reading-steps td { padding: 9px 12px; font-size: 13px; }
+.reading-numeral { width: 46px; text-align: center; font-family: var(--body-serif); color: var(--muted); }
+.reading-state { width: 150px; white-space: nowrap; }
+.reading-mark { display: inline-block; width: 15px; }
+.reading-detail { color: var(--muted); font-size: 12px; }
+.reading-step-waiting th, .reading-step-waiting .reading-numeral { color: var(--muted); }
+/* The pass running now is washed in the palette's own orange, so it reads as current at a glance. */
+.reading-step-reading { background: rgba(194, 65, 12, .07); }
+.reading-step-reading th, .reading-step-reading .reading-state { color: var(--orange); }
+.reading-counters { margin: 14px 0 0; }
+.reading-privacy, .reading-note { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
+.reading-error { margin: 10px 0 0; color: var(--orange); }
+.reading-actions { margin-top: 14px; }
+/* The wedge whose pass is running now: scribed by hand, not yet cut. No score is implied. */
+.wedge-reading { stroke: var(--orange); stroke-width: 1px; stroke-dasharray: 3 5; fill: none; opacity: .8; }
+
+@media (max-width: 767px) {
+  .reading-steps th, .reading-steps td { padding: 8px 6px; font-size: 12px; }
+  .reading-numeral { width: 26px; }
+  .reading-state { width: 104px; }
+  .reading-detail { display: none; }
+}
