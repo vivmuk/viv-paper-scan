@@ -3,7 +3,7 @@ import { Fragment, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useScan } from './scan-provider';
 import { percent } from '@/lib/format';
-import { folioLabel, hasFolioAnchor } from '@/lib/folio';
+import { excerptWindow, folioPlace, sectionLabel } from '@/lib/folio';
 import type { EnquiryResult } from '@/lib/scan-client';
 
 type Filter = 'all' | 'bad' | 'unclear' | 'good';
@@ -65,12 +65,17 @@ export function CheckLedger() {
       <button type="button" key={item.key} aria-pressed={filter === item.key} onClick={() => chooseFilter(item.key)}>{item.label} {counts[item.key]}</button>)}
     </div>
     <h2 className="section-title" id="ledger-title">THE CHECK LEDGER</h2>
-    <p className="ledger-hint">Select any enquiry to open its finding, its wording and the passage it rests on, without leaving this page.</p>
+    <p className="ledger-hint">Select any enquiry to open its finding, its wording, and the sentence it rests on shown where the author wrote it.</p>
     <table className="check-ledger"><caption className="visually-hidden">Evidence for reporting enquiries</caption><tbody>
       {visible.map((check) => {
         const isOpen = !!open[check.id];
         const settled = !['pending', 'unanswered', 'not-applicable'].includes(check.state);
         const detailId = `ledger-detail-${check.id}`;
+        // The passage is shown inside its own paragraph, cut from the paper's text at the offsets the
+        // server computed by searching for the quotation. Nothing here is rewritten or paraphrased.
+        const passage = check.passage;
+        const source = passage ? scan.paragraphs.find((item) => item.id === passage.para) : undefined;
+        const excerpt = passage && source ? excerptWindow(source.text, passage.start, passage.end) : null;
         return <Fragment key={check.id}>
           <tr className={isOpen ? 'ledger-open' : undefined}>
             <th scope="row">
@@ -92,21 +97,32 @@ export function CheckLedger() {
                   <strong>{FINDING[check.state]}</strong>
                   {settled ? <span className="ledger-evidence-value"> — evidence {percent(check.evidence)} of what is expected</span> : null}
                 </p>
-                {check.passage
-                  ? <blockquote className="ledger-quote">
-                      <p>{check.passage.quote}</p>
-                      <cite>{folioLabel(check.passage, scan.paragraphs)}</cite>
-                    </blockquote>
+                {passage && excerpt
+                  ? <>
+                      <p className="ledger-where">
+                        <span className="ledger-where-domain">{sectionLabel(passage.section)}</span>
+                        <span className="ledger-where-place">{folioPlace(passage, scan.paragraphs)}</span>
+                      </p>
+                      <blockquote className="ledger-quote">
+                        <p>
+                          {excerpt.clippedStart ? '\u2026 ' : ''}{excerpt.before}
+                          <mark>{excerpt.quote}</mark>
+                          {excerpt.after}{excerpt.clippedEnd ? ' \u2026' : ''}
+                        </p>
+                      </blockquote>
+                    </>
+                  : passage
+                    ? <blockquote className="ledger-quote"><p><mark>{passage.quote}</mark></p></blockquote>
                   /* A quotation the server could not locate is never shown: say so rather than
                      dress the absence up as evidence. */
-                  : <p className="ledger-quote-empty">
-                      {check.applicable
-                        ? 'No passage in this paper could be matched to this enquiry, so none is shown here.'
-                        : 'This enquiry is not asked of this study type.'}
-                    </p>}
+                    : <p className="ledger-quote-empty">
+                        {check.applicable
+                          ? 'No passage in this paper could be matched to this enquiry, so none is shown here.'
+                          : 'This enquiry is not asked of this study type.'}
+                      </p>}
                 <div className="ledger-actions">
-                  {check.passage && hasFolioAnchor(check.passage)
-                    ? <Link className="folio-link" href={`/check/${check.id}#folio-${check.passage.page}`}>Show it on the page</Link>
+                  {passage
+                    ? <Link className="folio-link" href={`/check/${check.id}#folio-${passage.page}`}>Show the whole passage in the paper</Link>
                     : null}
                   <Link className="folio-link" href={`/check/${check.id}`}>Go deeper: the full marginal note</Link>
                 </div>

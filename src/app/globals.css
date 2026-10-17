@@ -155,6 +155,14 @@
   .ledger-quote cite { display: block; margin-top: 7px; font: 11px/1.7 var(--sans); font-style: normal; color: var(--muted); letter-spacing: .04em; }
   .ledger-quote-empty { margin: 0 0 12px; border-top: 1px solid var(--light-rule); padding-top: 12px; color: var(--muted); font-size: 15px; }
   .ledger-actions { display: flex; flex-wrap: wrap; gap: 22px; }
+  .ledger-where { display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px; margin: 0 0 10px; font: 11px/1.6 var(--sans); letter-spacing: .08em; }
+  /* Named for what it is and scoped to a leaf span: .ledger-section is the ledger's own wrapper
+     element, and a class of the same name put uppercase over every quoted passage in the table. */
+  .ledger-where-domain { color: var(--orange); text-transform: uppercase; }
+  .ledger-where-place { color: var(--muted); }
+  .folio-place { margin: 8px 0 0; font: 11px/1.7 var(--sans); letter-spacing: .08em; color: var(--muted); text-transform: uppercase; }
+  /* The wash is the palette's own orange on white, so it cannot drift toward cream. */
+  .ledger-quote mark { background: rgba(194, 65, 12, .16); color: var(--ink); padding: .1em .18em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
   .wedge-divider { stroke: var(--light-rule); stroke-width: 1px; }
   .category-track { stroke: var(--light-rule); stroke-width: 1.6px; fill: none; }
   .category-arc { stroke: var(--orange); stroke-width: 2.2px; fill: none; }
@@ -201,10 +209,10 @@
   .marginal-note-detail .enquiry-question { font-size: 26px; max-width: 45ch; }
   .marginal-note-detail blockquote { padding: 34px 24px; font-size: 26px; line-height: 1.85; }
   .detail-margin { padding-top: 50px; }
-  .folio-excerpt { display: none; margin-top: 45px; border-top: 1px solid var(--orange); padding-top: 20px; scroll-margin-top: 24px; }
+  .folio-excerpt { display: block; margin-top: 45px; border-top: 1px solid var(--orange); padding-top: 20px; scroll-margin-top: 24px; }
   .folio-excerpt:target { display: block; }
   .folio-excerpt > p { margin-top: 15px; font-size: 19px; }
-  .folio-excerpt mark { background: var(--paper); color: var(--ink); text-decoration: underline; text-decoration-color: var(--orange); text-underline-offset: 5px; }
+  .folio-excerpt mark { background: rgba(194, 65, 12, .16); color: var(--ink); box-decoration-break: clone; -webkit-box-decoration-break: clone; text-decoration: underline; text-decoration-color: var(--orange); text-underline-offset: 5px; }
 
   /* The Instruments Annex and the Catalogue keep native, accessible tables. */
   .ruled-table { width: 100%; table-layout: fixed; border: 1px solid var(--rule); }
