@@ -5,6 +5,7 @@ import { DISCLOSURE, CELL_NOTE_QUESTION } from '@/lib/fixtures';
 import type { EnquiryResult } from '@/lib/scan-client';
 import { useScan } from './scan-provider';
 import { percent } from '@/lib/format';
+import { folioLabel, hasFolioAnchor } from '@/lib/folio';
 
 export function Masthead({ children, large = false }: { children: React.ReactNode; large?: boolean }) {
   return <h1 className={`masthead${large ? ' masthead-large' : ''}`}>{children}</h1>;
@@ -72,7 +73,7 @@ export function MarginalNote({ result: provided, detail = false }: { result?: En
     <p className="evidence-caption">{['pending', 'unanswered', 'not-applicable'].includes(result.state) ? result.state.replaceAll('-', ' ') : `Evidence ${percent(result.evidence)}`}</p>
     <p className="enquiry-question">{question}</p>
     {quote ? <blockquote><p>{quote}</p></blockquote> : <p className="no-passage">No verified quoted passage is available for this enquiry.</p>}
-    {passage ? <a className="folio-link" href={`/check/${result.id}#folio-${passage.page}`} onClick={(event) => { if (!event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey && event.button === 0 && window.location.pathname !== `/check/${result.id}`) { event.preventDefault(); router.push(`/check/${result.id}#folio-${passage.page}`); } }}>{passage.section} - Folio {passage.page} - Show on page</a> : <p className="folio-link">No verified folio reference is available.</p>}
+    {passage && hasFolioAnchor(passage) ? <a className="folio-link" href={`/check/${result.id}#folio-${passage.page}`} onClick={(event) => { if (!event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey && event.button === 0 && window.location.pathname !== `/check/${result.id}`) { event.preventDefault(); router.push(`/check/${result.id}#folio-${passage.page}`); } }}>{passage.section} - Folio {passage.page} - Show on page</a> : passage ? <p className="folio-link">{folioLabel(passage, scan.paragraphs)}</p> : <p className="folio-link">No verified folio reference is available.</p>}
   </article>;
 }
 export function WarningMark() {

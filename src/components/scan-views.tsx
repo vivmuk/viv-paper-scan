@@ -5,6 +5,7 @@ import { CheckLedger } from './check-ledger';
 import { RadialPlate } from './radial-plate';
 import { ScanStatus } from './scan-status';
 import { useScan } from './scan-provider';
+import { folioLabel, hasFolioAnchor } from '@/lib/folio';
 
 export function RegisterView() {
   const { scan } = useScan();
@@ -44,8 +45,8 @@ export function CheckView({ id }: { id: string }) {
   }, [id]);
   return <><ScanStatus />{result && <div className="spread detail-spread">
     <section><Masthead>THE MARGINAL NOTE</Masthead><MarginalNote result={result} detail />
-      {paragraph && passage && <section className="folio-excerpt" style={hash === `#folio-${passage.page}` ? { display: 'block' } : undefined} id={`folio-${passage.page}`} aria-labelledby="folio-heading">
-        <h2 className="section-title" id="folio-heading">{passage.section} - Folio {passage.page}</h2>
+      {paragraph && passage && scan && <section className="folio-excerpt" style={hash === `#folio-${passage.page}` ? { display: 'block' } : undefined} id={hasFolioAnchor(passage) ? `folio-${passage.page}` : undefined} aria-labelledby="folio-heading">
+        <h2 className="section-title" id="folio-heading">{folioLabel(passage, scan.paragraphs)}</h2>
         <p><span>{paragraph.text.slice(0, passage.start)}</span><mark>{paragraph.text.slice(passage.start, passage.end)}</mark><span>{paragraph.text.slice(passage.end)}</span></p>
       </section>}
     </section>

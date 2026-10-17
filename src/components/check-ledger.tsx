@@ -3,6 +3,7 @@ import { Fragment, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useScan } from './scan-provider';
 import { percent } from '@/lib/format';
+import { folioLabel, hasFolioAnchor } from '@/lib/folio';
 import type { EnquiryResult } from '@/lib/scan-client';
 
 type Filter = 'all' | 'bad' | 'unclear' | 'good';
@@ -94,7 +95,7 @@ export function CheckLedger() {
                 {check.passage
                   ? <blockquote className="ledger-quote">
                       <p>{check.passage.quote}</p>
-                      <cite>{check.passage.section} &middot; Folio {check.passage.page}</cite>
+                      <cite>{folioLabel(check.passage, scan.paragraphs)}</cite>
                     </blockquote>
                   /* A quotation the server could not locate is never shown: say so rather than
                      dress the absence up as evidence. */
@@ -104,7 +105,7 @@ export function CheckLedger() {
                         : 'This enquiry is not asked of this study type.'}
                     </p>}
                 <div className="ledger-actions">
-                  {check.passage
+                  {check.passage && hasFolioAnchor(check.passage)
                     ? <Link className="folio-link" href={`/check/${check.id}#folio-${check.passage.page}`}>Show it on the page</Link>
                     : null}
                   <Link className="folio-link" href={`/check/${check.id}`}>Go deeper: the full marginal note</Link>
