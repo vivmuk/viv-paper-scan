@@ -63,6 +63,13 @@
   .blue-button:hover:not(:disabled) { background: var(--ink); border-color: var(--ink); }
   .copy-status, .input-status { color: var(--muted); font: 13px/1.6 var(--sans); }
   .copy-status:not(:empty), .input-status:not(:empty) { margin-top: 16px; }
+  .scan-status { margin-bottom: 26px; font: 13px/1.6 var(--sans); overflow-wrap: anywhere; }
+  .scan-status > p { margin-bottom: 10px; }
+  .scan-status th { width: 24%; }
+  .scan-status .ruled-table th, .scan-status .ruled-table td { padding: 10px 14px; }
+  .scan-status button { margin-top: 12px; }
+  .annex-page .ruled-table { overflow-wrap: anywhere; }
+  .ledger-percent { overflow-wrap: anywhere; }
   .roman { color: var(--orange); font-family: var(--serif); font-weight: 600; }
   .document-page { max-width: 1120px; margin: 0 auto; }
   .document-page .masthead { text-align: center; }

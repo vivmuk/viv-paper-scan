@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import { SpecimenLink } from '@/components/scan-status';
 import { Masthead } from '@/components/almanac';
 import { DropSlot } from '@/components/drop-slot';
 import { PRIVACY_LINE } from '@/lib/fixtures';
 export const metadata: Metadata = { title: 'The Docket' };
-// TODO: POST /api/scan with browser-extracted paragraphs, never the PDF itself.
 export default function DocketPage() {
   return <div className="spread docket-spread">
     <section className="docket-main">
@@ -16,7 +15,7 @@ export default function DocketPage() {
     </section>
     <aside className="margin-column docket-margin">
       <section className="specimen-box"><h2 className="section-title">A SPECIMEN PAPER</h2>
-        <p>Dubowitz et al. - PLOS ONE - 2023</p><Link className="specimen-link" href="/scan">Open the specimen <span aria-hidden="true">↗</span></Link>
+        <p>Dubowitz et al. - PLOS ONE - 2023</p><SpecimenLink />
       </section>
       <p className="privacy-line privacy-desktop">{PRIVACY_LINE}</p>
     </aside>

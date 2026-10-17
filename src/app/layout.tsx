@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { Footer } from '@/components/almanac';
+import { ScanProvider } from '@/components/scan-provider';
 import './globals.css';
 
 const bodoni = localFont({
@@ -17,6 +18,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="en" className={bodoni.variable}><body>
     <a className="skip-link" href="#main">Skip to content</a>
-    <main id="main" className="paper">{children}</main><Footer />
+    <ScanProvider><main id="main" className="paper">{children}</main><Footer /></ScanProvider>
   </body></html>;
 }

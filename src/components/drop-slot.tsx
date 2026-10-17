@@ -1,22 +1,30 @@
 "use client";
 import { useRef, useState, type DragEvent } from 'react';
+import { useRouter } from 'next/navigation';
+import { useScan } from './scan-provider';
 
 export function DropSlot() {
   const input = useRef<HTMLInputElement>(null);
+  const router = useRouter();
+  const { start } = useScan();
   const [dragging, setDragging] = useState(false);
   const [message, setMessage] = useState('');
   const [busy, setBusy] = useState(false);
   async function select(file?: File) {
-    if (!file) return;
+    if (!file || busy) return;
     if (!file.name.toLowerCase().endsWith('.pdf')) { setMessage('Choose a PDF file.'); return; }
     if (file.size > 50 * 1024 * 1024) { setMessage('Choose a PDF smaller than 50 MB.'); return; }
     setBusy(true);
+    setMessage('Reading the PDF in your browser…');
     try {
       const signature = new TextDecoder().decode(await file.slice(0, 5).arrayBuffer());
       if (signature !== '%PDF-') { setMessage('This file is not a readable PDF. Choose another file.'); return; }
-      setMessage(`${file.name} selected. Live scanning is not connected in this demonstration. Open the specimen to explore the worked example.`);
-    } catch { setMessage('The PDF could not be read. Choose another file.'); }
-    finally { setBusy(false); }
+      const { extractPdf } = await import('@/lib/pdf-browser');
+      const { paper, paragraphs } = await extractPdf(file, setMessage);
+      start(paper, paragraphs);
+      router.push('/scan');
+    } catch (error) { setMessage(error instanceof Error ? error.message : 'The PDF could not be read. Choose another file.'); }
+    finally { setBusy(false); if (input.current) input.current.value = ''; }
   }
   function drop(event: DragEvent<HTMLLabelElement>) {
     event.preventDefault(); setDragging(false); void select(event.dataTransfer.files[0]);
@@ -27,6 +35,6 @@ export function DropSlot() {
       <span>Drop a PDF or <span className="choose-file">choose a file</span></span>
       <input ref={input} type="file" name="paper" autoComplete="off" accept="application/pdf,.pdf" aria-label="Drop a PDF or choose a file" onChange={(event) => void select(event.target.files?.[0])} disabled={busy} />
     </label>
-    <p className="input-status" role="status">{busy ? 'Reading the PDF in your browser…' : message}</p>
+    <p className="input-status" role="status">{message}</p>
   </div>;
 }
