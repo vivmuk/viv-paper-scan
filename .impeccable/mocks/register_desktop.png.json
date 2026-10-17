@@ -1,0 +1,38 @@
+{
+ "name": "register_desktop",
+ "prompt": "A UI screen for a web tool, rendered as a crisp product screenshot. WORLD: a Victorian almanac rebuilt as a modern web interface. The information architecture of an almanac: ruled tables with hairline rules, small-caps headings, roman numerals, numbered stanzas, marginal notes in the outer column, folio references like 'Folio 3', a fine engraved woodcut plate, and a printed foot-rule. PALETTE, strict: pure white paper background (#FFFFFF), black ink text, burnt orange (#C2410C) as the single accent for figures and rules, deep blue (#1D4ED8) as the second accent for links and tags. NO cream, NO sepia, NO parchment, NO beige, NO brown, NO aged or yellowed paper, NO coffee stains. The paper is bright white and modern; only the structure is Victorian. TYPOGRAPHY: a high-contrast serif for headings, a clean sans or mono for figures and small print. Layout is generous with real whitespace, large legible type, no clutter. Explanations are carried by printed tables, not by cards or floating panels. Everything must look like real, working software: crisp alignment, consistent 1px rules, no hand-drawn scribbles, no fake UI chrome, no collage, no poster, no photograph of a book, no scene, no desk, no hands. Render the interface itself, flat and frontal, as a full-screen product mockup with real text legible. STRICT RULES: render ONLY the elements named in this brief and nothing else. Do not add, substitute or repeat any row, table, section, caption, counter, figure or note that is not listed here. Every word of visible text must be copied exactly from this brief; invent no words and no numbers. The masthead appears exactly ONCE. The paper is PURE #FFFFFF white, as bright as a modern browser window: no warm tint, no ivory, no cream, no parchment, no sepia, no off-white, no paper texture, no vignette. Nothing is cropped: every element fits inside the frame with clear margins. High contrast black ink text. A desktop screen, 16:9 landscape. A single results page divided by one vertical hairline rule into a wide left part and a narrow right column. LEFT: a header band 'THE SUMMATION RULE' with a very large burnt orange '79' labelled 'COMPLETENESS INDEX'; a row of exactly four counters '47 in good shape', '2 unclear', '12 missing or flagged', '13 do not apply'; a table 'THE REGISTER' with exactly six numbered columns 'I Study design 67', 'II Statistics 80', 'III Materials 89', 'IV Data & code 62', 'V Ethics 89', 'VI Claims 87'; then a ledger table with exactly seven rows giving name, thin burnt orange bar and percentage: 'Hypothesis stated 98%', 'Primary outcome defined 89%', 'Sample size justified 8%', 'Randomization 97%', 'Blinded allocation 25%', 'Cell authentication 98%', 'Antibody identifiers 14%'. RIGHT COLUMN: exactly one marginal note and no others, headed 'CELL AUTHENTICATION' with the small line 'Evidence 98%', an italic question \"Was the cell line's identity confirmed by a method such as STR profiling?\", and an indented quoted passage between two hairline rules reading exactly: \"Cell line identities were confirmed by short tandem repeat profiling (Cellbank, Australia).\" Under the quotation one line in blue: 'Materials - Folio 3 - Show on page'. In the top right corner of the right column, one small radial engraved plate of thin spokes, entirely inside the frame.",
+ "model": "gpt-image-2-5-flare",
+ "aspect": "16:9",
+ "resolution": "1K",
+ "date": "2026-10-17T07:20:38",
+ "attempts": 1,
+ "attempt_history": [
+  {
+   "attempt": 1,
+   "bytes": 501991,
+   "stddev": 43.2,
+   "size": [
+    1536,
+    864
+   ],
+   "ok": true,
+   "seconds": 19.3
+  }
+ ],
+ "guard": {
+  "bytes": 501991,
+  "stddev": 43.2,
+  "size": [
+   1536,
+   864
+  ]
+ },
+ "qc": {
+  "verdict": "pass",
+  "note": "pure white; quotation exact; exactly 1 marginal note; no invented rows",
+  "by": "vision_analyze",
+  "checks_passed": true
+ },
+ "sha256": "c9a4f32b35623f10d651065db986c755f0b13450d8a0c553cd9906a55f24f14c",
+ "kind": "desktop"
+}

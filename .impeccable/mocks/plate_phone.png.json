@@ -1,0 +1,39 @@
+{
+ "name": "plate_phone",
+ "prompt": "A UI screen for a web tool, rendered as a crisp product screenshot. WORLD: a Victorian almanac rebuilt as a modern web interface. The information architecture of an almanac: ruled tables with hairline rules, small-caps headings, roman numerals, numbered stanzas, marginal notes in the outer column, folio references like 'Folio 3', a fine engraved woodcut plate, and a printed foot-rule. PALETTE, strict: pure white paper background (#FFFFFF), black ink text, burnt orange (#C2410C) as the single accent for figures and rules, deep blue (#1D4ED8) as the second accent for links and tags. NO cream, NO sepia, NO parchment, NO beige, NO brown, NO aged or yellowed paper, NO coffee stains. The paper is bright white and modern; only the structure is Victorian. TYPOGRAPHY: a high-contrast serif for headings, a clean sans or mono for figures and small print. Layout is generous with real whitespace, large legible type, no clutter. Explanations are carried by printed tables, not by cards or floating panels. Everything must look like real, working software: crisp alignment, consistent 1px rules, no hand-drawn scribbles, no fake UI chrome, no collage, no poster, no photograph of a book, no scene, no desk, no hands. Render the interface itself, flat and frontal, as a full-screen product mockup with real text legible. STRICT RULES: render ONLY the elements named in this brief and nothing else. Do not add, substitute or repeat any row, table, section, caption, counter, figure or note that is not listed here. Every word of visible text must be copied exactly from this brief; invent no words and no numbers. The masthead appears exactly ONCE. The paper is PURE #FFFFFF white, as bright as a modern browser window: no warm tint, no ivory, no cream, no parchment, no sepia, no off-white, no paper texture, no vignette. Nothing is cropped: every element fits inside the frame with clear margins. High contrast black ink text. A phone screen, 9:16 portrait, a complete screen with clear margins and nothing cropped. The upper two thirds: one large fine copperplate engraving of a circular radial instrument, drawn in thin black linework with burnt orange tint, with about forty thin spokes of unequal length radiating from a small central circle, each spoke ending in a small dot, with short labels at the spoke ends such as 'hypothesis', 'control', 'blinding', 'error bars'. Under the plate one caption line in small caps: 'THE ENGRAVED PLATE - SPOKE LENGTH IS THE EVIDENCE THAT IT IS REPORTED'. The lower third: exactly one bordered marginal note headed 'CELL AUTHENTICATION', the small line 'Evidence 98%', an italic question \"Was the cell line's identity confirmed by a method such as STR profiling?\", then an indented quotation between two hairline rules reading exactly \"Cell line identities were confirmed by short tandem repeat profiling (Cellbank, Australia).\" and one blue line beneath it: 'Materials - Folio 3 - Show on page'. No other tables, sections, legends or notes anywhere on the screen. The screen carries no title or masthead other than the caption line given here; do not print any product name, brand or page title anywhere.",
+ "model": "gpt-image-2-5-flare",
+ "aspect": "9:16",
+ "resolution": "1K",
+ "date": "2026-10-17T07:26:15",
+ "attempts": 1,
+ "attempt_history": [
+  {
+   "attempt": 1,
+   "bytes": 654416,
+   "stddev": 33.39,
+   "size": [
+    864,
+    1536
+   ],
+   "ok": true,
+   "seconds": 19.5
+  }
+ ],
+ "guard": {
+  "bytes": 654416,
+  "stddev": 33.39,
+  "size": [
+   864,
+   1536
+  ]
+ },
+ "qc": {
+  "verdict": "pass",
+  "note": "pure white; no title or brand anywhere; caption + quotation exact; plate inside frame; one spoke micro-label garbled ('modifica')",
+  "by": "vision_analyze",
+  "checks_passed": true,
+  "rerolled": true
+ },
+ "sha256": "808a97daca58cb6e1a954c520e49dec8be4251d75711870d17b5eea2bad4293b",
+ "kind": "phone"
+}

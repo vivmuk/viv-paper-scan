@@ -1,0 +1,38 @@
+{
+ "name": "annex_phone",
+ "prompt": "A UI screen for a web tool, rendered as a crisp product screenshot. WORLD: a Victorian almanac rebuilt as a modern web interface. The information architecture of an almanac: ruled tables with hairline rules, small-caps headings, roman numerals, numbered stanzas, marginal notes in the outer column, folio references like 'Folio 3', a fine engraved woodcut plate, and a printed foot-rule. PALETTE, strict: pure white paper background (#FFFFFF), black ink text, burnt orange (#C2410C) as the single accent for figures and rules, deep blue (#1D4ED8) as the second accent for links and tags. NO cream, NO sepia, NO parchment, NO beige, NO brown, NO aged or yellowed paper, NO coffee stains. The paper is bright white and modern; only the structure is Victorian. TYPOGRAPHY: a high-contrast serif for headings, a clean sans or mono for figures and small print. Layout is generous with real whitespace, large legible type, no clutter. Explanations are carried by printed tables, not by cards or floating panels. Everything must look like real, working software: crisp alignment, consistent 1px rules, no hand-drawn scribbles, no fake UI chrome, no collage, no poster, no photograph of a book, no scene, no desk, no hands. Render the interface itself, flat and frontal, as a full-screen product mockup with real text legible. STRICT RULES: render ONLY the elements named in this brief and nothing else. Do not add, substitute or repeat any row, table, section, caption, counter, figure or note that is not listed here. Every word of visible text must be copied exactly from this brief; invent no words and no numbers. The masthead appears exactly ONCE. The paper is PURE #FFFFFF white, as bright as a modern browser window: no warm tint, no ivory, no cream, no parchment, no sepia, no off-white, no paper texture, no vignette. Nothing is cropped: every element fits inside the frame with clear margins. High contrast black ink text. A phone screen, 9:16 portrait. A masthead reading 'THE INSTRUMENTS ANNEX' exactly once in small caps above a double rule. One line beneath: 'Settled by arithmetic and public registers, not by judgement.' Then a ruled three-column table headed 'No.', 'Check' and 'State' with exactly seven rows and no more: 'I REPORTED STATISTICS - The t, F, r and z statistics are recomputed against their p-values. Method after statcheck, Nuijten et al. 2016. - consistent'; 'II RATIOS AND INTERVALS - An estimate must lie inside its own interval. Altman and Bland, 2011. - one mismatch'; 'III PER CENT WITH COUNTS - Every percentage is re-derived from its counts. - consistent'; 'IV MEANS OF WHOLE NUMBERS - A reported mean must be reachable with the reported n. GRIM, Brown and Heathers 2017. - nothing to redo'; 'V RETRACTIONS AND NOTICES - Checked against Crossref and Retraction Watch. - consistent'; 'VI CELL LINES - Matched against the Cellosaurus register, with STR profiles. - nothing to redo'; 'VII DATA, CODE AND REGISTRIES - DOIs must resolve, repositories must exist, accessions must be public. - consistent'. No emblem, no illustration, no other sections.",
+ "model": "gpt-image-2-5-flare",
+ "aspect": "9:16",
+ "resolution": "1K",
+ "date": "2026-10-17T07:22:45",
+ "attempts": 1,
+ "attempt_history": [
+  {
+   "attempt": 1,
+   "bytes": 564652,
+   "stddev": 39.44,
+   "size": [
+    864,
+    1536
+   ],
+   "ok": true,
+   "seconds": 16.5
+  }
+ ],
+ "guard": {
+  "bytes": 564652,
+  "stddev": 39.44,
+  "size": [
+   864,
+   1536
+  ]
+ },
+ "qc": {
+  "verdict": "pass",
+  "note": "7 rows; statcheck/Altman-Bland/GRIM citations present; states correct; masthead duplicated (minor)",
+  "by": "vision_analyze",
+  "checks_passed": true
+ },
+ "sha256": "b693e04ef0679c184dd33b87363e11970fc32366a3e79be285dd7e6a468a8412",
+ "kind": "phone"
+}

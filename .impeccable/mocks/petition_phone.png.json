@@ -1,0 +1,38 @@
+{
+ "name": "petition_phone",
+ "prompt": "A UI screen for a web tool, rendered as a crisp product screenshot. WORLD: a Victorian almanac rebuilt as a modern web interface. The information architecture of an almanac: ruled tables with hairline rules, small-caps headings, roman numerals, numbered stanzas, marginal notes in the outer column, folio references like 'Folio 3', a fine engraved woodcut plate, and a printed foot-rule. PALETTE, strict: pure white paper background (#FFFFFF), black ink text, burnt orange (#C2410C) as the single accent for figures and rules, deep blue (#1D4ED8) as the second accent for links and tags. NO cream, NO sepia, NO parchment, NO beige, NO brown, NO aged or yellowed paper, NO coffee stains. The paper is bright white and modern; only the structure is Victorian. TYPOGRAPHY: a high-contrast serif for headings, a clean sans or mono for figures and small print. Layout is generous with real whitespace, large legible type, no clutter. Explanations are carried by printed tables, not by cards or floating panels. Everything must look like real, working software: crisp alignment, consistent 1px rules, no hand-drawn scribbles, no fake UI chrome, no collage, no poster, no photograph of a book, no scene, no desk, no hands. Render the interface itself, flat and frontal, as a full-screen product mockup with real text legible. A phone screen, 9:16 portrait. The hand-off page. A masthead 'THE PETITION' with a double rule, and a line under it: 'Twelve particulars wanting. Choose which to petition for.' Below, a ruled list of six rows, each with a small printed checkbox square, a check name in small caps, a short action in italic underneath, and a right-aligned orange count: 'SAMPLE SIZE JUSTIFIED - Run the power calculation for the main comparison', 'BLINDED ALLOCATION - Write the sentence stating who was blind to group', 'CELL AUTHENTICATION - Draft the wording for STR confirmation', 'DATA IN A REPOSITORY - Prepare the deposit and the README', 'CODE AVAILABLE - Package the analysis with its environment', 'ERROR BARS DEFINED - Draft the figure legend lines'. Under the list, a large bordered textarea headed 'BRIEF' containing a few lines of small mono type, and beneath it a solid blue button 'Copy and open' beside a printed line 'Your paper is not sent. Only the gaps you ticked.'",
+ "model": "gpt-image-2-5-flare",
+ "aspect": "9:16",
+ "resolution": "1K",
+ "date": "2026-10-17T07:11:29",
+ "attempts": 1,
+ "attempt_history": [
+  {
+   "attempt": 1,
+   "bytes": 522134,
+   "stddev": 51.4,
+   "size": [
+    864,
+    1536
+   ],
+   "ok": true,
+   "seconds": 18.1
+  }
+ ],
+ "guard": {
+  "bytes": 522134,
+  "stddev": 51.4,
+  "size": [
+   864,
+   1536
+  ]
+ },
+ "qc": {
+  "verdict": "pass",
+  "note": "pure white; 6 rows; checkboxes; BRIEF + blue button",
+  "by": "vision_analyze",
+  "checks_passed": true
+ },
+ "sha256": "1ddc00ad4c1b5d2850e2f07c53a8f0ec7dbe4610d64f08161068ea108cc9c0e0",
+ "kind": "phone"
+}

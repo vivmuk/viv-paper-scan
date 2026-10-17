@@ -1,0 +1,20 @@
+# Build and tooling
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# Secrets — never commit a key
+.env
+.env.*
+!.env.example
+
+# Reconnaissance material. Kept on disk because it is the evidence base for the reverse-engineering
+# notes in docs/, but deliberately NOT published: it contains third-party minified bundles captured
+# from a closed-source tool and a downloaded article, neither of which this MIT licence can cover.
+recon/
+logs/
+
+# Local scratch
+.impeccable/mocks/*.tmp
+.DS_Store

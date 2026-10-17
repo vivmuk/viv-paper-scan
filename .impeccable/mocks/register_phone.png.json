@@ -1,0 +1,38 @@
+{
+ "name": "register_phone",
+ "prompt": "A UI screen for a web tool, rendered as a crisp product screenshot. WORLD: a Victorian almanac rebuilt as a modern web interface. The information architecture of an almanac: ruled tables with hairline rules, small-caps headings, roman numerals, numbered stanzas, marginal notes in the outer column, folio references like 'Folio 3', a fine engraved woodcut plate, and a printed foot-rule. PALETTE, strict: pure white paper background (#FFFFFF), black ink text, burnt orange (#C2410C) as the single accent for figures and rules, deep blue (#1D4ED8) as the second accent for links and tags. NO cream, NO sepia, NO parchment, NO beige, NO brown, NO aged or yellowed paper, NO coffee stains. The paper is bright white and modern; only the structure is Victorian. TYPOGRAPHY: a high-contrast serif for headings, a clean sans or mono for figures and small print. Layout is generous with real whitespace, large legible type, no clutter. Explanations are carried by printed tables, not by cards or floating panels. Everything must look like real, working software: crisp alignment, consistent 1px rules, no hand-drawn scribbles, no fake UI chrome, no collage, no poster, no photograph of a book, no scene, no desk, no hands. Render the interface itself, flat and frontal, as a full-screen product mockup with real text legible. STRICT RULES: render ONLY the elements named in this brief and nothing else. Do not add, substitute or repeat any row, table, section, caption, counter, figure or note that is not listed here. Every word of visible text must be copied exactly from this brief; invent no words and no numbers. The masthead appears exactly ONCE. The paper is PURE #FFFFFF white, as bright as a modern browser window: no warm tint, no ivory, no cream, no parchment, no sepia, no off-white, no paper texture, no vignette. Nothing is cropped: every element fits inside the frame with clear margins. High contrast black ink text. A phone screen, 9:16 portrait. The results page. Exactly these elements, top to bottom. A bordered header band with the small-caps label 'THE SUMMATION RULE' and, beside it, a very large burnt orange figure '79' labelled 'COMPLETENESS INDEX'. A row of exactly four counters in ruled cells: '47 in good shape', '2 unclear', '12 missing or flagged', '13 do not apply'. A ruled table headed 'THE REGISTER' with exactly six numbered columns and no more: 'I Study design 67 - 8 of 13', 'II Statistics 80 - 7 of 9', 'III Materials 89 - 11 of 12', 'IV Data & code 62 - 5 of 9', 'V Ethics 89 - 9 of 10', 'VI Claims 87 - 7 of 8'. A row of exactly four small tabs: 'All 61', 'Missing or flagged 12', 'Unclear 2', 'In good shape 47'. Then a ledger headed 'THE CHECK LEDGER' with exactly four rows, each a check name, a thin horizontal burnt orange bar and a percentage: 'Hypothesis stated 98%', 'Primary outcome defined 89%', 'Sample size justified 8%', 'Cell authentication 98%'. No other rows or panels.",
+ "model": "gpt-image-2-5-flare",
+ "aspect": "9:16",
+ "resolution": "1K",
+ "date": "2026-10-17T07:20:19",
+ "attempts": 1,
+ "attempt_history": [
+  {
+   "attempt": 1,
+   "bytes": 382347,
+   "stddev": 37.65,
+   "size": [
+    864,
+    1536
+   ],
+   "ok": true,
+   "seconds": 17.2
+  }
+ ],
+ "guard": {
+  "bytes": 382347,
+  "stddev": 37.65,
+  "size": [
+   864,
+   1536
+  ]
+ },
+ "qc": {
+  "verdict": "pass",
+  "note": "pure white; all key strings exact; nothing invented",
+  "by": "vision_analyze",
+  "checks_passed": true
+ },
+ "sha256": "9bf874349daa6d6a46a569e5e856a48566a78f175dfa5126fe9ca6b4e6247335",
+ "kind": "phone"
+}

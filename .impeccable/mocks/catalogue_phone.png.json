@@ -1,0 +1,39 @@
+{
+ "name": "catalogue_phone",
+ "prompt": "A UI screen for a web tool, rendered as a crisp product screenshot. WORLD: a Victorian almanac rebuilt as a modern web interface. The information architecture of an almanac: ruled tables with hairline rules, small-caps headings, roman numerals, numbered stanzas, marginal notes in the outer column, folio references like 'Folio 3', a fine engraved woodcut plate, and a printed foot-rule. PALETTE, strict: pure white paper background (#FFFFFF), black ink text, burnt orange (#C2410C) as the single accent for figures and rules, deep blue (#1D4ED8) as the second accent for links and tags. NO cream, NO sepia, NO parchment, NO beige, NO brown, NO aged or yellowed paper, NO coffee stains. The paper is bright white and modern; only the structure is Victorian. TYPOGRAPHY: a high-contrast serif for headings, a clean sans or mono for figures and small print. Layout is generous with real whitespace, large legible type, no clutter. Explanations are carried by printed tables, not by cards or floating panels. Everything must look like real, working software: crisp alignment, consistent 1px rules, no hand-drawn scribbles, no fake UI chrome, no collage, no poster, no photograph of a book, no scene, no desk, no hands. Render the interface itself, flat and frontal, as a full-screen product mockup with real text legible. STRICT RULES: render ONLY the elements named in this brief and nothing else. Do not add, substitute or repeat any row, table, section, caption, counter, figure or note that is not listed here. Every word of visible text must be copied exactly from this brief; invent no words and no numbers. The masthead appears exactly ONCE. The paper is PURE #FFFFFF white, as bright as a modern browser window: no warm tint, no ivory, no cream, no parchment, no sepia, no off-white, no paper texture, no vignette. Nothing is cropped: every element fits inside the frame with clear margins. High contrast black ink text. A phone screen, 9:16 portrait. The published catalogue page. A masthead reading 'A CATALOGUE OF ENQUIRIES' once, with a double rule under it. One line beneath: 'All seventy-four questions, printed in full. Nothing is asked that is not listed here.' Then a ruled table with three columns headed 'No.', 'Question' and 'Tag', containing exactly seven rows and no more: 'i - Does the paper state the hypothesis it set out to test? - no tag', 'ii - Was the number of subjects or samples in each group reported? - ARRIVE 2', 'iii - Was the allocation sequence generated at random? - ARRIVE 4', 'iv - Were the people who allocated the treatments kept blind? - ARRIVE 5', 'v - Was the sample size justified before the experiment? - ARRIVE 2', 'vi - Was the identity of each cell line confirmed? - no tag', 'vii - Are the antibodies identified by clone, catalogue number or RRID? - no tag'. The tag column uses only these exact strings: 'ARRIVE 2', 'ARRIVE 4', 'ARRIVE 5', 'ARRIVE 2', and a dash for the rest, spelled A-R-R-I-V-E. The seventh row carries a small orange warning-sign triangle and the words 'warning sign'. At the foot one solid blue button reading 'Copy the catalogue as JSON'. Nothing else on the page.",
+ "model": "gpt-image-2-5-flare",
+ "aspect": "9:16",
+ "resolution": "1K",
+ "date": "2026-10-17T07:26:55",
+ "attempts": 1,
+ "attempt_history": [
+  {
+   "attempt": 1,
+   "bytes": 461006,
+   "stddev": 52.43,
+   "size": [
+    864,
+    1536
+   ],
+   "ok": true,
+   "seconds": 21.2
+  }
+ ],
+ "guard": {
+  "bytes": 461006,
+  "stddev": 52.43,
+  "size": [
+   864,
+   1536
+  ]
+ },
+ "qc": {
+  "verdict": "pass",
+  "note": "pure white; 7 rows; ARRIVE 2/4/5 tags exact after re-roll; no garbled words; subtitle renders 'twenty-four' instead of 'seventy-four'",
+  "by": "vision_analyze",
+  "checks_passed": true,
+  "rerolled": true
+ },
+ "sha256": "1ffdc58ccc18d3c0b691c2d7d68222e2845a9fcab866b822f49b25803055bb08",
+ "kind": "phone"
+}

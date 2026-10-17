@@ -1,0 +1,39 @@
+{
+ "name": "plate_desktop",
+ "prompt": "A UI screen for a web tool, rendered as a crisp product screenshot. WORLD: a Victorian almanac rebuilt as a modern web interface. The information architecture of an almanac: ruled tables with hairline rules, small-caps headings, roman numerals, numbered stanzas, marginal notes in the outer column, folio references like 'Folio 3', a fine engraved woodcut plate, and a printed foot-rule. PALETTE, strict: pure white paper background (#FFFFFF), black ink text, burnt orange (#C2410C) as the single accent for figures and rules, deep blue (#1D4ED8) as the second accent for links and tags. NO cream, NO sepia, NO parchment, NO beige, NO brown, NO aged or yellowed paper, NO coffee stains. The paper is bright white and modern; only the structure is Victorian. TYPOGRAPHY: a high-contrast serif for headings, a clean sans or mono for figures and small print. Layout is generous with real whitespace, large legible type, no clutter. Explanations are carried by printed tables, not by cards or floating panels. Everything must look like real, working software: crisp alignment, consistent 1px rules, no hand-drawn scribbles, no fake UI chrome, no collage, no poster, no photograph of a book, no scene, no desk, no hands. Render the interface itself, flat and frontal, as a full-screen product mockup with real text legible. STRICT RULES: render ONLY the elements named in this brief and nothing else. Do not add, substitute or repeat any row, table, section, caption, counter, figure or note that is not listed here. Every word of visible text must be copied exactly from this brief; invent no words and no numbers. The masthead appears exactly ONCE. The paper is PURE #FFFFFF white, as bright as a modern browser window: no warm tint, no ivory, no cream, no parchment, no sepia, no off-white, no paper texture, no vignette. Nothing is cropped: every element fits inside the frame with clear margins. High contrast black ink text. A desktop screen, 16:9 landscape, a page for the engraved plate, nothing cropped. LEFT: one large fine copperplate engraving of a circular radial instrument with about forty thin spokes of unequal length radiating from a small central circle, in black linework with burnt orange tint, short labels at the spoke ends. RIGHT, separated by a vertical hairline rule: a heading 'DOMAINS & SCORES' and a two-column table with exactly six rows: 'I Study design 67', 'II Statistics 80', 'III Materials 89', 'IV Data & code 62', 'V Ethics 89', 'VI Claims 87'. Under the table one caption line in small caps: 'SPOKE LENGTH IS THE EVIDENCE THAT IT IS REPORTED'. Across the bottom, one full-width ruled row of exactly four counters: '47 in good shape', '2 unclear', '12 missing or flagged', '13 do not apply'. No other tables, no other counters, no other headings, no illustrations beyond the one plate. The page carries no title, masthead or brand name anywhere; only the heading 'DOMAINS & SCORES', the caption line and the counters listed here.",
+ "model": "gpt-image-2-5-flare",
+ "aspect": "16:9",
+ "resolution": "1K",
+ "date": "2026-10-17T07:26:34",
+ "attempts": 1,
+ "attempt_history": [
+  {
+   "attempt": 1,
+   "bytes": 590105,
+   "stddev": 34.94,
+   "size": [
+    1536,
+    864
+   ],
+   "ok": true,
+   "seconds": 18.3
+  }
+ ],
+ "guard": {
+  "bytes": 590105,
+  "stddev": 34.94,
+  "size": [
+   1536,
+   864
+  ]
+ },
+ "qc": {
+  "verdict": "pass",
+  "note": "pure white; no product title; six domains exact; four counters exact; plate inside frame",
+  "by": "vision_analyze",
+  "checks_passed": true,
+  "rerolled": true
+ },
+ "sha256": "7e339338edc01ce7d4859123289011b3bc883bdecf43e5c4c7bb64d266a88d7f",
+ "kind": "desktop"
+}

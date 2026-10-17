@@ -1,0 +1,38 @@
+{
+ "name": "petition_desktop",
+ "prompt": "A UI screen for a web tool, rendered as a crisp product screenshot. WORLD: a Victorian almanac rebuilt as a modern web interface. The information architecture of an almanac: ruled tables with hairline rules, small-caps headings, roman numerals, numbered stanzas, marginal notes in the outer column, folio references like 'Folio 3', a fine engraved woodcut plate, and a printed foot-rule. PALETTE, strict: pure white paper background (#FFFFFF), black ink text, burnt orange (#C2410C) as the single accent for figures and rules, deep blue (#1D4ED8) as the second accent for links and tags. NO cream, NO sepia, NO parchment, NO beige, NO brown, NO aged or yellowed paper, NO coffee stains. The paper is bright white and modern; only the structure is Victorian. TYPOGRAPHY: a high-contrast serif for headings, a clean sans or mono for figures and small print. Layout is generous with real whitespace, large legible type, no clutter. Explanations are carried by printed tables, not by cards or floating panels. Everything must look like real, working software: crisp alignment, consistent 1px rules, no hand-drawn scribbles, no fake UI chrome, no collage, no poster, no photograph of a book, no scene, no desk, no hands. Render the interface itself, flat and frontal, as a full-screen product mockup with real text legible. STRICT RULES: render ONLY the elements named in this brief and nothing else. Do not add, substitute or repeat any row, table, section, caption, counter, figure or note that is not listed here. Every word of visible text must be copied exactly from this brief; invent no words and no numbers. The masthead appears exactly ONCE. The paper is PURE #FFFFFF white, as bright as a modern browser window: no warm tint, no ivory, no cream, no parchment, no sepia, no off-white, no paper texture, no vignette. Nothing is cropped: every element fits inside the frame with clear margins. High contrast black ink text. A desktop screen, 16:9 landscape, one page divided by a vertical hairline rule into a wide left part and a narrow right panel. LEFT: a masthead 'THE PETITION' above a double rule, then a ruled list of exactly six rows, each with a small empty checkbox square, a bold small-caps check name, an italic one-line action beneath it, and a right-aligned burnt orange count. The six rows are exactly: 'SAMPLE SIZE JUSTIFIED - Run the power calculation for the main comparison - 3'; 'BLINDED ALLOCATION - Write the sentence stating who was blind to group - 2'; 'CELL AUTHENTICATION - Draft the wording for STR confirmation - 1'; 'DATA IN A REPOSITORY - Prepare the deposit and the README - 4'; 'CODE AVAILABLE - Package the analysis with its environment - 7'; 'ERROR BARS DEFINED - Draft the figure legend lines - 5'. RIGHT PANEL: a tall bordered box headed 'BRIEF' containing four short typed lines of small mono text, then a printed toggle line 'Include title and DOI', then one solid blue button 'Copy and open', then one italic printed line: 'Your paper is not sent. Only the gaps you ticked leave this page.' No other rows, sections or illustrations.",
+ "model": "gpt-image-2-5-flare",
+ "aspect": "16:9",
+ "resolution": "1K",
+ "date": "2026-10-17T07:21:33",
+ "attempts": 1,
+ "attempt_history": [
+  {
+   "attempt": 1,
+   "bytes": 445037,
+   "stddev": 52.27,
+   "size": [
+    1536,
+    864
+   ],
+   "ok": true,
+   "seconds": 18.3
+  }
+ ],
+ "guard": {
+  "bytes": 445037,
+  "stddev": 52.27,
+  "size": [
+   1536,
+   864
+  ]
+ },
+ "qc": {
+  "verdict": "pass",
+  "note": "pure white; 6 exact row names; checkboxes; BRIEF panel; nothing invented",
+  "by": "vision_analyze",
+  "checks_passed": true
+ },
+ "sha256": "c97114a1481e780a42fae501abac425f796cdd4113548eee01069aadb37f68df",
+ "kind": "desktop"
+}

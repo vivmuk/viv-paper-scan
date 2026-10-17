@@ -1,0 +1,38 @@
+{
+ "name": "docket_phone",
+ "prompt": "A UI screen for a web tool, rendered as a crisp product screenshot. WORLD: a Victorian almanac rebuilt as a modern web interface. The information architecture of an almanac: ruled tables with hairline rules, small-caps headings, roman numerals, numbered stanzas, marginal notes in the outer column, folio references like 'Folio 3', a fine engraved woodcut plate, and a printed foot-rule. PALETTE, strict: pure white paper background (#FFFFFF), black ink text, burnt orange (#C2410C) as the single accent for figures and rules, deep blue (#1D4ED8) as the second accent for links and tags. NO cream, NO sepia, NO parchment, NO beige, NO brown, NO aged or yellowed paper, NO coffee stains. The paper is bright white and modern; only the structure is Victorian. TYPOGRAPHY: a high-contrast serif for headings, a clean sans or mono for figures and small print. Layout is generous with real whitespace, large legible type, no clutter. Explanations are carried by printed tables, not by cards or floating panels. Everything must look like real, working software: crisp alignment, consistent 1px rules, no hand-drawn scribbles, no fake UI chrome, no collage, no poster, no photograph of a book, no scene, no desk, no hands. Render the interface itself, flat and frontal, as a full-screen product mockup with real text legible. STRICT RULES: render ONLY the elements named in this brief and nothing else. Do not add, substitute or repeat any row, table, section, caption, counter, figure or note that is not listed here. Every word of visible text must be copied exactly from this brief; invent no words and no numbers. The masthead appears exactly ONCE. The paper is PURE #FFFFFF white, as bright as a modern browser window: no warm tint, no ivory, no cream, no parchment, no sepia, no off-white, no paper texture, no vignette. Nothing is cropped: every element fits inside the frame with clear margins. High contrast black ink text. A phone screen, 9:16 portrait. The ingest page. A masthead reading 'VIV-PAPER-SCAN' exactly once in small caps with a double rule under it. One large serif headline in two lines: 'Drop in a paper.' and 'See what it fails to report.' Two lines of subtext: 'Seventy-four published reporting questions.' and 'Every answer points to the sentence it rests on.' One large ruled drop-slot with a dashed burnt orange border and a small down-arrow glyph, containing the words 'Drop a PDF or choose a file'. Under the slot one printed foot-rule in small type: 'Read in your browser. The file is never uploaded. Only its text is sent. Nothing is saved.' At the bottom one bordered box headed 'A SPECIMEN PAPER' containing the line 'Dubowitz et al. - PLOS ONE - 2023' and a blue link 'Open the specimen'. Nothing else.",
+ "model": "gpt-image-2-5-flare",
+ "aspect": "9:16",
+ "resolution": "1K",
+ "date": "2026-10-17T07:22:11",
+ "attempts": 1,
+ "attempt_history": [
+  {
+   "attempt": 1,
+   "bytes": 379754,
+   "stddev": 47.62,
+   "size": [
+    864,
+    1536
+   ],
+   "ok": true,
+   "seconds": 19.4
+  }
+ ],
+ "guard": {
+  "bytes": 379754,
+  "stddev": 47.62,
+  "size": [
+   864,
+   1536
+  ]
+ },
+ "qc": {
+  "verdict": "pass",
+  "note": "masthead once; headline + slot exact; 'Dubowit' typo and one garbled token in subtext line 2 (minor)",
+  "by": "vision_analyze",
+  "checks_passed": true
+ },
+ "sha256": "24f6e40e9fbf89a0558175308eadb6aac0f299e82cfa54b597c1452444d53210",
+ "kind": "phone"
+}

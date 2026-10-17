@@ -1,0 +1,20 @@
+# Railway deployment for viv-paper-scan.
+#
+# The start command runs `next start`, which reads PORT from the environment — Railway sets that
+# itself, so nothing here should hardcode a port.
+#
+# The Venice key is NOT supplied here. It is set as a service variable in the Railway dashboard and
+# read server-side at request time; it is never exposed to the browser. A deploy without it succeeds
+# and the app loads, but a scan will report plainly that VENICE_API_KEY is not set rather than fail
+# mysteriously.
+
+[build]
+builder = "NIXPACKS"
+buildCommand = "npm run build"
+
+[deploy]
+startCommand = "npm start"
+healthcheckPath = "/"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 3
